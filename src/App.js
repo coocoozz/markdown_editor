@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import styles from './app.module.css';
+import Editor from './componets/editor/editor';
+import Preview from './componets/preview/preview';
 
 function App() {
+  const [content, setContent] = useState();
+
+  const handleConvert = (text) => {
+    setContent(text);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Editor handleConvert={handleConvert} />
+      <Preview content={content} />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+}
+
+.preview {
+  padding: 0.2em;
+  height: 90vh;
+  border: 1px solid darkgray;
+  background-color: mintcream;
+}
